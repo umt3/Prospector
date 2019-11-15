@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{BF731106-F445-FE34-3DDA-B2B91338CF62}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/__Scripts/Scoreboard.cs">
+    <Files>
+      <File FileName="Assets/__Scripts/Prospector.cs" Line="44" Column="1" />
+      <File FileName="Assets/__Scripts/CardProspector.cs" Line="27" Column="34" />
+      <File FileName="Assets/__Scripts/Card.cs" Line="84" Column="21" />
+      <File FileName="Assets/__Scripts/ScoreManager.cs" Line="116" Column="1" />
+      <File FileName="Assets/__Scripts/FloatingScore.cs" Line="129" Column="2" />
+      <File FileName="Assets/__Scripts/Scoreboard.cs" Line="4" Column="12" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
