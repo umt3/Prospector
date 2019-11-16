@@ -27,7 +27,7 @@ public class Card : MonoBehaviour {
     {
         if (spriteRenderers == null || spriteRenderers.Length == 0)
         {
-            spriteRenderers = GetComponentsInChildren<SpiritRenderer>();
+            spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
         }
     }
 
@@ -35,7 +35,7 @@ public class Card : MonoBehaviour {
 
         public void SetSortingLayerName(string tSLN)
     {
-        PopulateSpriteRenderers();
+        PopulateSpriteRenderer();
 
         foreach (SpriteRenderer tSR in spriteRenderers)
         {
@@ -84,11 +84,7 @@ public class Card : MonoBehaviour {
         print(name);
     }
 
-    // Use this for initialization
-    void Start () {
-	
-	}
-	
+
 	// Update is called once per frame
 	void Update () {
 	

@@ -25,16 +25,16 @@ public class ScoreManager : MonoBehaviour
     public int scoreRun = 0;
     public int score = 0;
 
-  void Awake()
+    void Awake()
     {
-        if(S == null)
+        if (S == null)
         {
             S = this;
         }
         else
         {
             Debug.LogError("ERROR: ScoreManager.Awake(): S is already set!");
-      
+
         }
         if (PlayerPrefs.HasKey("ProspectorHighScore"))
         {
@@ -51,7 +51,8 @@ public class ScoreManager : MonoBehaviour
         {
             S.Event(evt);
 
-        }catch (System.NullReferenceException nre)
+        }
+        catch (System.NullReferenceException nre)
         {
             Debug.LogError("ScoreManager:Event() called while S=null.\n" + nre);
         }
@@ -76,9 +77,9 @@ public class ScoreManager : MonoBehaviour
                 scoreRun += chain;
                 break;
 
-     
-         }
-    switch (evt)
+
+        }
+        switch (evt)
         {
             case eScoreEvent.gameWin:
                 SCORE_FROM_PREV_ROUND = score;
@@ -90,13 +91,15 @@ public class ScoreManager : MonoBehaviour
             case eScoreEvent.gameLoss:
                 if (HIGH_SCORE <= score)
                 {
-                    print("You gpt the high score! High score: " +score);
+                    print("You gpt the high score! High score: " + score);
                     HIGH_SCORE = score;
                     PlayerPrefs.SetInt("ProspectorHighScore", score);
-                } else {
-                    print("Your final score for the game was:" +score);
-                    
-                    }
+                }
+                else
+                {
+                    print("Your final score for the game was:" + score);
+
+                }
                 break;
 
 
@@ -104,10 +107,10 @@ public class ScoreManager : MonoBehaviour
                 print("score:" + score + " scoreRun:" + scoreRun + " chain:" + chain);
                 break;
         }
-        }
+    }
 
 
-    static public int CHAIN { get { return S.chain; }    }
+    static public int CHAIN { get { return S.chain; } }
     static public int SCORE { get { return S.score; } }
     static public int SCORE_RUN { get { return S.scoreRun; } }
 
@@ -115,15 +118,4 @@ public class ScoreManager : MonoBehaviour
 
 
 
-      // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}

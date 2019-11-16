@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Scoreboard : MonoBehaviour
 {
-public static Scoreboard S;
+    public static Scoreboard S;
 
     [Header("Set in Inspector")]
     public GameObject prefabFloatingScore;
@@ -28,10 +28,10 @@ public static Scoreboard S;
         {
             _score = value;
             _scoreString = _score.ToString("NO");
-                 
+
         }
     }
-   
+
     public string scoreString
     {
         get
@@ -72,39 +72,13 @@ public static Scoreboard S;
     {
         GameObject go = Instantiate<GameObject>(prefabFloatingScore);
         go.transform.SetParent(canvasTrans);
-        FloatingScore fs = go.GetComponent<FLoatingScore>();
+        FloatingScore fs = go.GetComponent<FloatingScore>();
         fs.score = amt;
         fs.reportFinishTo = this.gameObject;
         fs.Init(pts);
         return (fs);
 
     }
-
 }
 
 
-
-}
-
-
-
-
-
-
-
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}

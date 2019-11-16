@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-
 public class SlotDef
 {
     public float x;
@@ -13,6 +12,7 @@ public class SlotDef
     public int layerID = 0;
     public int id;
     public List<int> hiddenBy = new List<int>();
+    public string type = "slot";
     public Vector2 stagger;
 }
 
@@ -57,18 +57,18 @@ public class Layout : MonoBehaviour
             }
 
 
-                //various attributes are parsed into numerical values
-                tSD.x = float.Parse(slotsX[i].att("x"));
-                tSD.y = float.Parse(slotsX[i].att("y"));
-                tSD.layerID = int.Parse(slotsX[i].att("layer"));
-                // this converts the number of the layerID into a text layerName
-                tSD.layerName = sortingLayerNames[tSD.layerID];
+            //various attributes are parsed into numerical values
+            tSD.x = float.Parse(slotsX[i].att("x"));
+            tSD.y = float.Parse(slotsX[i].att("y"));
+            tSD.layerID = int.Parse(slotsX[i].att("layer"));
+            // this converts the number of the layerID into a text layerName
+            tSD.layerName = sortingLayerNames[tSD.layerID];
 
-                switch (tSD.type)
-                {
-                    case "slot":
-                        tSD.faceUp = (slotsX[i].att("faceup") == "1");
-                        tSD.id = int.Parse(slotsX[i].att("id"));
+            switch (tSD.type)
+            {
+                case "slot":
+                    tSD.faceUp = (slotsX[i].att("faceup") == "1");
+                    tSD.id = int.Parse(slotsX[i].att("id"));
                     if (slotsX[i].HasAtt("hiddenby"))
                     {
                         string[] hiding = slotsX[i].att("hiddenby").Split(',');
@@ -78,41 +78,29 @@ public class Layout : MonoBehaviour
 
                         }
                     }
-        
-
-        slotDefs.Add(tSD);
-        break;
 
 
-        case "drawpile":
-        tSD.stagger.x = float.Parse(slotsX[i].att("xstagger"));
-        drawPile = tSD;
-        break;
-
-        case "discardpile":
-        discardPile = tSD;
-        break;
+                    slotDefs.Add(tSD);
+                    break;
 
 
+                case "drawpile":
+                    tSD.stagger.x = float.Parse(slotsX[i].att("xstagger"));
+                    drawPile = tSD;
+                    break;
 
+                case "discardpile":
+                    discardPile = tSD;
+                    break;
+
+
+
+
+            }
+        }
 
     }
-}
 
 }
 
-}
 
-                // Start is called before the first frame update
-                void Start()
-{
-
-}
-
-// Update is called once per frame
-void Update()
-{
-
-}
-
-}
